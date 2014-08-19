@@ -32,13 +32,5 @@ if(WIN32 AND Boost_VERSION VERSION_GREATER "104900")
   set(BOOST_REQUIRED_MODULES ${BOOST_REQUIRED_MODULES} chrono)
 endif(WIN32 AND Boost_VERSION VERSION_GREATER "104900")
 
-find_package(Boost 1.40.0 REQUIRED COMPONENTS ${BOOST_REQUIRED_MODULES})
-
-if(Boost_FOUND)
-  set(BOOST_FOUND TRUE)
-  # Obtain diagnostic information about Boost's automatic linking outputted 
-  # during compilation time.
-  add_definitions(${Boost_LIB_DIAGNOSTIC_DEFINITIONS})
-  include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
-  link_directories(${Boost_LIBRARY_DIRS})
-endif(Boost_FOUND)
+set(BOOST_FOUND TRUE)
+set(Boost_LIBRARIES $ENV{LUCY_LIBS}/iOS/boost/1.55_c++11/boost.framework)
