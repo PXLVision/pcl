@@ -139,6 +139,8 @@ if (__COMPILER_PATHSCALE)
   endif()
 endif()
 
+add_compile_options(-fvisibility=hidden)
+
 if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
   SET(CMAKE_COMPILER_IS_CLANG 1)
   if("${CMAKE_C_FLAGS}" STREQUAL "")
@@ -279,15 +281,15 @@ endif(NOT PCL_SHARED_LIBS OR WIN32)
 find_package(Qhull)
 
 # Find Qt5
-include(cmake/pcl_find_qt5.cmake)
+#include(cmake/pcl_find_qt5.cmake)
 
 # Find QT4
-if(NOT QT5_FOUND)
-    find_package(Qt4)
-    if (QT4_FOUND)
-      include(${QT_USE_FILE})
-    endif (QT4_FOUND)
-endif()
+#if(NOT QT5_FOUND)
+#    find_package(Qt4)
+#    if (QT4_FOUND)
+#      include(${QT_USE_FILE})
+#    endif (QT4_FOUND)
+#endif()
 
 # Find VTK
 find_package(VTK)
