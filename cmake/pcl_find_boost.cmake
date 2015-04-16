@@ -33,4 +33,4 @@ if(WIN32 AND Boost_VERSION VERSION_GREATER "104900")
 endif(WIN32 AND Boost_VERSION VERSION_GREATER "104900")
 
 set(BOOST_FOUND TRUE)
-set(Boost_LIBRARIES $ENV{LUCY_LIBS}/iOS/boost/1.55_c++11/boost.framework)
+set(Boost_LIBRARIES $ENV{LUCY_LIBS}/iOS/boost/1.55_c++11_all/boost.framework)
