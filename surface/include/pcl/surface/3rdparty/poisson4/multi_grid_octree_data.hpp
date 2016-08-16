@@ -40,6 +40,8 @@ DAMAGE.
 #define ITERATION_POWER 1.0/3
 #define MEMORY_ALLOCATOR_BLOCK_SIZE 1<<12
 #define SPLAT_ORDER 2
+#undef _B;
+#undef _X;
 
 #ifndef _MSC_VER
 namespace std

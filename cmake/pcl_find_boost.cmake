@@ -33,4 +33,9 @@ if(WIN32 AND Boost_VERSION VERSION_GREATER "104900")
 endif(WIN32 AND Boost_VERSION VERSION_GREATER "104900")
 
 set(BOOST_FOUND TRUE)
-set(Boost_LIBRARIES $ENV{LUCY_LIBS}/iOS/boost/1.55_c++11_all/boost.framework)
+set(Boost_INCLUDE_DIRS $ENV{LUCY_LIBS}/Android/boost/1.55_with_x86_arm64/include)
+set(Boost_LIBRARY_DIRS $ENV{LUCY_LIBS}/Android/boost/1.55_with_x86_arm64/lib/arm64-v8a)
+set(Boost_LIBRARIES "-lboost_system-gcc-mt-1_55 -lboost_filesystem-gcc-mt-1_55 -lboost_thread-gcc-mt-1_55")
+
+include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
+link_directories(${Boost_LIBRARY_DIRS})
